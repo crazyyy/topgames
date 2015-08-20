@@ -21,7 +21,9 @@
     </div>
     <?php wpeExcerpt('wpeExcerpt10'); ?>
   </div><!-- exertp -->
-  <a rel="nofollow" class="start-play" target="_blank" href="#">ОТКРЫТЬ ИГРУ</a>
+  <?php if(get_field('link')) { echo '<a rel="nofollow" class="start-play" target="_blank" href="' . get_field('link') . '">ОТКРЫТЬ ИГРУ</a>'; } ?>
+
+
 </div>
   <?php endwhile; else: ?>
 <?php endif; ?>

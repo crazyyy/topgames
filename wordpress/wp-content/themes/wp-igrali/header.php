@@ -16,7 +16,7 @@
     <!-- css + javascript -->
     <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body>
 
   <!-- Pushy Menu -->
   <nav class="pushy pushy-left">
