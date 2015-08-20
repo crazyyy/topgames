@@ -1,7 +1,9 @@
 <?php if (have_posts()): while (have_posts()) : the_post(); ?>
-  <div id="post-<?php the_ID(); ?>" <?php post_class('looper'); ?>>
+<div class="block" id="block-13">
+  <h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
 
-    <a rel="nofollow" class="feature-img" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+  <div class="pt-left">
+    <a rel="nofollow" style="display: block;" class="block-img-holder" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
       <?php if ( has_post_thumbnail()) :
         the_post_thumbnail('medium');
       else: ?>
@@ -9,21 +11,17 @@
       <?php endif; ?>
     </a><!-- /post thumbnail -->
 
-    <h2 class="inner-title">
-      <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-    </h2><!-- /post title -->
+    <div id="post-ratings-13" class="post-ratings" data-nonce="0818aa8a52"></div>
 
-    <span class="date"><?php the_time('j F Y'); ?> <span><?php the_time('G:i'); ?></span></span>
-    <span class="author"><?php _e( 'Published by', 'wpeasy' ); ?> <?php the_author_posts_link(); ?></span>
-    <span class="comments"><?php comments_popup_link( __( 'Leave your thoughts', 'wpeasy' ), __( '1 Comment', 'wpeasy' ), __( '% Comments', 'wpeasy' )); ?></span><!-- /post details -->
+  </div>
 
-    <?php wpeExcerpt('wpeExcerpt40'); ?>
-
-  </div><!-- /looper -->
+  <div class="pt-right clearfix">
+    <div class="cat">
+      <span>Жанр: </span><?php the_category(', '); // Separated by commas ?>
+    </div>
+    <?php wpeExcerpt('wpeExcerpt20'); ?>
+  </div><!-- exertp -->
+  <a rel="nofollow" class="start-play" target="_blank" href="#">ОТКРЫТЬ ИГРУ</a>
+</div>
   <?php endwhile; else: ?>
-  <div>
-
-    <h2 class="title"><?php _e( 'Sorry, nothing to display.', 'wpeasy' ); ?></h2>
-
-  </div><!-- /article -->
 <?php endif; ?>

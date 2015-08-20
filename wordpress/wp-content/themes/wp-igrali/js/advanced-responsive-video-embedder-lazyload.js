@@ -1,1 +1,0 @@
-window.onload=function(){"use_strict";for(var t=document.getElementsByClassName("arve-iframe-btn"),e=0;e<t.length;e++)t[e].onclick=function(){var t=document.getElementById(this.getAttribute("data-target"));t.setAttribute("src",t.getAttribute("data-src")),t.className="arve-inner",this.parentNode.removeChild(this)}};

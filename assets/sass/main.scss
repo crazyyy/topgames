@@ -2,10 +2,61 @@
 @import 'old/pushy.scss';
 @import 'old/all.scss';
 
+.clearfix {
+  *zoom: 1;
+  &:before {
+    display: table;
 
+    content: '';
+  }
+  &:after {
+    display: table;
+    clear: both;
+
+    content: '';
+  }
+}
+.clear {
+  clear: both;
+}
 
 #content > #center > .dose > .dosesingle,
 #content > #right > .dose > .dosesingle,
 #header + #content > #left > #rlblock_left {
   display: none !important;
+}
+.pt-right {
+  &.clearfix {
+    margin-bottom: 8px;
+  }
+}
+.start-play {
+  font: 700 16px/18px Arial;
+
+  display: block;
+
+  width: 147px;
+  height: 21px;
+  margin: 0 auto 11px;
+  padding: 5px 0 0;
+
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  color: #2047f2;
+  border-radius: 5px;
+  background: url(../img/start-play.png) no-repeat;
+  text-shadow: 1px 1px #aea494;
+}
+.footernav {
+  li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+}
+.wp_rp_content {
+  .more-link {
+    display: none;
+  }
 }
