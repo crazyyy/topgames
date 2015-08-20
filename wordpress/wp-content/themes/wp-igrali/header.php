@@ -17,28 +17,24 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<!-- wrapper -->
-<div class="wrapper">
-  <header role="banner">
-    <div class="inner">
 
-      <div class="logo">
-        <?php if ( is_front_page() && is_home() ){ } else { ?>
-          <a href="<?php echo home_url(); ?>">
-            <?php  } ?>
-            <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="<?php wp_title( '' ); ?>" title="<?php wp_title( '' ); ?>" class="logo-img">
-            <?php if ( is_front_page() && is_home() ){
-            } else { ?>
-          </a>
-        <?php } ?>
-      </div><!-- /logo -->
-
-      <nav class="nav" role="navigation">
-        <?php wpeHeadNav(); ?>
-      </nav><!-- /nav -->
-
-    </div><!-- /.inner -->
-  </header><!-- /header -->
-
-  <section role="main">
-    <div class="inner">
+  <!-- Pushy Menu -->
+  <nav class="pushy pushy-left">
+    <?php wpeMobileNav(); ?>
+  </nav>
+  <!-- Site Overlay -->
+  <div class="site-overlay"></div>
+  <!-- Your Content -->
+  <div id="container">
+    <div id="wrapper">
+      <div id="header">
+        <div class="menu-btn"><span>menu</span></div>
+        <div class="container">
+          <?php wpeHeadNav(); ?>
+          <?php wpeHeadRNav(); ?>
+          <a href="<?php echo home_url(); ?>" class="logo">Топ лучших игр</a>
+        </div>
+      </div>
+      <div class="container">
+        <div class="wrap">
+          <div id="content">

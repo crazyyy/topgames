@@ -99,7 +99,30 @@ function wpeHeadNav()
     'after'           => '',
     'link_before'     => '',
     'link_after'      => '',
-    'items_wrap'      => '<ul class="headnav">%3$s</ul>',
+    'items_wrap'      => '<ul id="menu-top-menu1" class="menu">%3$s</ul>',
+    'depth'           => 0,
+    'walker'          => ''
+    )
+  );
+}
+function wpeHeadRNav()
+{
+  wp_nav_menu(
+  array(
+    'theme_location'  => 'header-right-menu',
+    'menu'            => '',
+    'container'       => 'div',
+    'container_class' => 'menu-{menu slug}-container',
+    'container_id'    => '',
+    'menu_class'      => 'menu',
+    'menu_id'         => '',
+    'echo'            => true,
+    'fallback_cb'     => 'wp_page_menu',
+    'before'          => '',
+    'after'           => '',
+    'link_before'     => '',
+    'link_after'      => '',
+    'items_wrap'      => '<ul id="menu-top-menu2" class="menu">%3$s</ul>',
     'depth'           => 0,
     'walker'          => ''
     )
@@ -145,7 +168,30 @@ function wpeSideNav() {
     'after'           => '',
     'link_before'     => '',
     'link_after'      => '',
-    'items_wrap'      => '<ul class="sidebarnav">%3$s</ul>',
+    'items_wrap'      => '<ul class="menu">%3$s</ul>',
+    'depth'           => 0,
+    'walker'          => ''
+    )
+  );
+}
+// WPE mobile navigation
+function wpeMobileNav() {
+  wp_nav_menu(
+  array(
+    'theme_location'  => 'mobile-menu',
+    'menu'            => '',
+    'container'       => 'div',
+    'container_class' => 'menu-{menu slug}-container',
+    'container_id'    => '',
+    'menu_class'      => 'menu',
+    'menu_id'         => '',
+    'echo'            => true,
+    'fallback_cb'     => 'wp_page_menu',
+    'before'          => '',
+    'after'           => '',
+    'link_before'     => '',
+    'link_after'      => '',
+    'items_wrap'      => '<ul id="menu-mobile-menu" class="menu">%3$s</ul>',
     'depth'           => 0,
     'walker'          => ''
     )
@@ -154,8 +200,10 @@ function wpeSideNav() {
 //  Register WPE Navigation
 function register_html5_menu() {
   register_nav_menus(array(
-    'header-menu' => __('Меню в шапке', 'wpeasy'),
+    'header-menu' => __('Меню в шапке слева', 'wpeasy'),
+    'header-right-menu' => __('Меню в шапке справа', 'wpeasy'),
     'sidebar-menu' => __('Меню в сайдбар', 'wpeasy'),
+    'mobile-menu' => __('Мобильное меню', 'wpeasy'),
     'footer-menu' => __('Меню в подвал', 'wpeasy')
   ));
 }
@@ -166,23 +214,11 @@ if (function_exists('register_sidebar')) {
     'name' => __('Блок виджетов #1', 'wpeasy'),
     'description' => __('Description for this widget-area...', 'wpeasy'),
     'id' => 'widgetarea1',
-    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    'before_widget' => '<div id="%1$s" class="vbox %2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<h6>',
-    'after_title' => '</h6>'
+    'before_title' => '<h2>',
+    'after_title' => '</h2>'
   ));
-  //  Define Sidebar Widget Area 2. If your want to display more widget - uncoment this
-  /*
-  register_sidebar(array(
-    'name' => __('Блок виджетов #2', 'wpeasy'),
-    'description' => __('Description for this widget-area...', 'wpeasy'),
-    'id' => 'widgetarea2',
-    'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    'after_widget' => '</div>',
-    'before_title' => '<h6>',
-    'after_title' => '</h6>'
-  ));
-  */
 }
 
 //  Custom Excerpts
