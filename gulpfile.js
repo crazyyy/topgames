@@ -11,7 +11,7 @@ var gulp = require('gulp'),
   });
 
 /* if work with html == true, else - false */
-var htmlOWp = true,
+var htmlOWp = false,
   wpThemeName = 'wp-igrali',
   wpDomain = 'igralli.com';
 
@@ -155,7 +155,7 @@ gulp.task('serve', ['sprite', 'images', 'scripts', 'styles', 'fonts'], function 
       notify: false,
       proxy: wpDomain,
       host: wpDomain,
-      port: 8080
+      port: 8283
     });
   }
 
