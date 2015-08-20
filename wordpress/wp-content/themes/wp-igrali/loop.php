@@ -11,7 +11,7 @@
       <?php endif; ?>
     </a><!-- /post thumbnail -->
 
-    <div id="post-ratings-13" class="post-ratings" data-nonce="0818aa8a52"></div>
+    <?php if(function_exists('the_ratings')) { the_ratings(); } ?>
 
   </div>
 
@@ -19,7 +19,7 @@
     <div class="cat">
       <span>Жанр: </span><?php the_category(', '); // Separated by commas ?>
     </div>
-    <?php wpeExcerpt('wpeExcerpt20'); ?>
+    <?php wpeExcerpt('wpeExcerpt10'); ?>
   </div><!-- exertp -->
   <a rel="nofollow" class="start-play" target="_blank" href="#">ОТКРЫТЬ ИГРУ</a>
 </div>

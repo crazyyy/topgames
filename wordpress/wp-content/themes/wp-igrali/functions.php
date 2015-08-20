@@ -221,8 +221,17 @@ if (function_exists('register_sidebar')) {
   ));
 }
 
+function custom_rating_image_extension() {
+    return 'png';
+}
+add_filter( 'wp_postratings_image_extension', 'custom_rating_image_extension' );
+
+
 //  Custom Excerpts
 //  RU: Произвольное обрезание текста
+function wpeExcerpt10($length) {
+    return 10;
+}
 function wpeExcerpt15($length) {
     return 15;
 }
