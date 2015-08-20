@@ -1,0 +1,67 @@
+#wp-calendar {
+  caption {
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    color: #68b;
+  }
+  thead th {
+    font-weight: bold;
+
+    text-align: center;
+
+    color: #888;
+  }
+  tbody td {
+    text-align: center;
+    a {
+      font-weight: bold;
+    }
+  }
+}
+
+/* Calendar ends */
+
+.aligncenter,
+div.aligncenter {
+  display: block;
+
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.alignleft {
+  float: left;
+
+  margin: 5px 5px 5px 0;
+}
+
+.alignright {
+  float: right;
+
+  margin: 5px 0 5px 5px;
+}
+
+.wp-caption {
+  margin: 10px;
+  padding-top: 4px;
+
+  text-align: center;
+
+  border: 1px solid #ddd;
+  background-color: #f3f3f3;
+  img {
+    margin: 0;
+    padding: 0;
+
+    border: 0 none;
+  }
+  p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+
+    margin: 0;
+    padding: 0 4px 5px;
+  }
+}
