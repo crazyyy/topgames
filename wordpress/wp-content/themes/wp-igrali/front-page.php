@@ -6,7 +6,7 @@
       <?php the_content(); ?>
     </div>
     <div class="block-holder">
-      <?php query_posts("showposts=50&cat=-1"); ?>
+    <?php query_posts( array( 'showposts' => '50', 'meta_key' => 'ratings_average', 'orderby' => 'meta_value_num', 'order' => 'DESC' ) ); ?>
         <?php get_template_part('loop'); ?>
       <?php wp_reset_query(); ?>
     </div>
